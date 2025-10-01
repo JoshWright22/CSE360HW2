@@ -4,6 +4,12 @@
 
 CSE360HW2 is a JavaFX application simulating a student Q&A platform similar to Reddit or StackOverflow. Students can create, read, update, and delete questions and answers, and interact with other students' content. This project implements a local H2 database to store users, questions, and answers.
 
+## Screencast Demonstration
+
+You can watch a video demonstration of the project here:
+
+[Vimeo HW2 Demo](https://vimeo.com/1123658574?share=copy)
+
 ## Features / User Stories
 
 ### Questions
