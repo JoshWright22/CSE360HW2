@@ -1,45 +1,65 @@
-# Student Q&A System - HW2
+CSE360HW2
 
-This project is a JavaFX-based **Student Q&A System** designed for students to create, view, update, and delete questions and answers. It simulates a Reddit-like platform where users can share knowledge and request help, with a backend database to store content.
+Overview
+CSE360HW2 is a JavaFX application simulating a student Q&A platform similar to Reddit or StackOverflow.
+Students can create, read, update, and delete questions and answers, and interact with other students' content. This project implements a local H2 database to store users, questions, and answers.
 
-## Features
+Features / User Stories
 
-- **Question Management**
-  - Create questions with a title and description
-  - View all questions posted by others
-  - Update your own questions
-  - Delete your questions
-  - Input validation with error messages for empty or invalid fields
+Questions
+- As a student, I can create a question with a title and description so I can request help.
+- As a student, I can read a list of questions others have asked so I can find relevant ones before asking a new question.
+- As a student, I can update my previously submitted question so I can correct or improve it.
+- As a student, I can delete my question so outdated or duplicate requests are removed.
+- As a student, I can see error messages if I try to create or update a question with missing or invalid fields.
 
-- **Answer Management**
-  - Post answers to questions
-  - View all answers to a specific question
-  - Update your own answers
-  - Delete your answers
-  - Input validation with error messages for empty or invalid fields
+Answers
+- As a student, I can create an answer to a question so I can share knowledge with others.
+- As a student, I can read all answers to a given question so I can benefit from multiple perspectives.
+- As a student, I can update my answer so I can correct or improve it.
+- As a student, I can delete my answer so that incorrect or unhelpful content is removed.
+- As a student, I can see error messages if I try to create or update an answer with missing or invalid fields.
 
-- **User Account Management**
-  - Set up accounts without requiring invitation codes
-  - User registration and login handling
+Users
+- Users can register with a username and password.
+- Users can log in and access their content.
 
-- **Database Integration**
-  - Uses H2 embedded database to store users, questions, and answers
-  - Database helper class handles all CRUD operations
+Technology Stack
+- Java 20+
+- JavaFX 24
+- H2 Database
+- JUnit 5 for testing
 
-## User Stories
+Installation
+1. Clone the repository:
+   git clone https://github.com/<your-username>/CSE360HW2.git
 
-- As a student, I can create a question with a title and description to request help.
-- As a student, I can read a list of questions to find relevant ones before asking a new question.
-- As a student, I can update or delete my previously submitted questions.
-- As a student, I can create, read, update, or delete answers for questions.
-- I can see error messages when creating or updating content with invalid fields.
+2. Open the project in Eclipse or IntelliJ.
 
-## Tech Stack
+3. Add JavaFX library to your module path. Example VM arguments for running:
+   --module-path "C:\path\to\javafx-sdk-24.0.1\lib" --add-modules javafx.controls,javafx.fxml
 
-- **Language:** Java  
-- **UI:** JavaFX  
-- **Database:** H2 (embedded)  
-- **Testing:** JUnit 5  
+4. Run the Main.java file to launch the application.
 
-## Project Structure
+Project Structure
+- application/ - JavaFX UI pages and controllers.
+- databasePart1/ - Database helper and data model classes.
+- test/ - JUnit tests for questions and answers CRUD functionality.
 
+UML Diagrams
+- Class Diagram: Shows relationships between User, DatabaseHelper, Question, and Answer.
+- Sequence Diagrams: Show how creating questions and answers flows through the UI and database.
+
+Testing
+JUnit tests cover all CRUD operations and validation rules for questions and answers.
+
+Example test cases:
+- Create question with valid input → success
+- Create question with empty title → error
+- Update an answer → success
+- Delete a question that does not exist → error
+
+Notes
+- No invitation code is required to create an account.
+- The application stores all data in a local H2 database (~/FoundationDatabase).
+- Error messages are displayed for invalid input.
